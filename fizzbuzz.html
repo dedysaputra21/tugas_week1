@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fizzbuz</title>
+</head>
+
+<body>
+    <h1> Get a FizzBuzz Result!</h1>
+    <p> Type a number :
+        <input type="text" id="input">
+        <button id="btn"> Click Here!</button> </p>
+    <hr/>
+    <p id="result"></p>
+
+
+    <script>
+        let btn = document.getElementById('btn');
+        let input = document.getElementById('input');
+        let result = document.getElementById('result');
+
+        btn.addEventListener("click", function() {
+            var nilai = input.value;
+
+            if (nilai == 0) {
+                result.innerHTML = "invalid input!";
+
+            } else if (nilai % 3 == 0 && nilai % 5 == 0) {
+                result.innerHTML = "Fizz Buzz!";
+
+            } else if (nilai % 3 == 0) {
+                result.innerHTML = "Fizz!";
+
+            } else if (nilai % 5 == 0) {
+                result.innerHTML = "Buzz!";
+
+            } else {
+                result.innerHTML = nilai;
+            }
+
+        });
+    </script>
+</body>
+
+</html>

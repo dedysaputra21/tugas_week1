@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horoskop</title>
+</head>
+
+<body>
+    <h1> Program Horoskop</h1>
+    <button id="btn"> Click Here!</button>
+    <p>Keberuntungan Anda Hari ini :</p>
+    <hr/>
+    <p id="result"></p>
+
+
+    <script>
+        let btn = document.getElementById('btn');
+
+        let result = document.getElementById('result');
+
+        btn.addEventListener("click", function() {
+            let arrHebat = [];
+            let arrBolehJuga = [];
+            let arrMengerikan = [];
+            let arrResult = [];
+
+
+
+            while (arrHebat.length < 2) {
+                var random = Math.floor(Math.random() * 1000000) + 1;
+
+                if (random % 2 == 0) {
+                    arrHebat.push(random)
+                }
+            }
+
+            while (arrBolehJuga.length < 6) {
+                var random = Math.floor(Math.random() * 1000000) + 1;
+
+                if (random % 3 == 0) {
+                    arrBolehJuga.push(random)
+                }
+            }
+
+            while (arrMengerikan.length < 2) {
+                var random = Math.floor(Math.random() * 1000000) + 1;
+
+                if (random % 5 == 0) {
+                    arrMengerikan.push(random)
+                }
+            }
+            console.log('arrHebat', arrHebat);
+            console.log('arrBolehJuga', arrBolehJuga);
+            console.log('arrMengerikan', arrMengerikan);
+
+            arrResult = arrHebat.concat(arrBolehJuga, arrMengerikan);
+
+            var randomResult = Math.floor(Math.random() * 10) + 1;
+
+            console.log('arrResult', arrResult);
+
+            if (arrHebat.includes(arrResult[randomResult])) {
+                result.innerHTML = "HEBAT";
+            }
+
+            if (arrBolehJuga.includes(arrResult[randomResult])) {
+                result.innerHTML = "Boleh Juga";
+            }
+            if (arrMengerikan.includes(arrResult[randomResult])) {
+                result.innerHTML = "Mengerikan";
+            }
+        });
+    </script>
+</body>
+
+</html>
